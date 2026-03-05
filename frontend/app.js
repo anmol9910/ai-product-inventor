@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3001';
+const API_BASE = 'https://ai-product-inventor.onrender.com';
 let analysisRunning = false;
 
 async function startAnalysis() {
