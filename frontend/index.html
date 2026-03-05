@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Inventor — #8NPD</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <div class="logo-mark">#8NPD</div>
+      <div class="nav-divider"></div>
+      <span class="nav-title">Product Inventor</span>
+    </div>
+    <div class="nav-right">
+      <div class="status-dot"></div>
+      <span class="status-text">Live Data Active</span>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-label">AI-Powered Market Research</div>
+      <h1>Discover <span class="grad">untapped</span><br>product opportunities</h1>
+      <p>Scans Amazon, Flipkart & Reddit in real-time. Finds genuine consumer pain points. Generates data-backed product concepts your competitors haven't thought of.</p>
+      
+      <div class="search-wrap">
+        <div class="search-box">
+          <div class="search-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <input type="text" id="categoryInput" placeholder="Enter a product category..." autocomplete="off">
+          <button id="analyzeBtn" onclick="startAnalysis()">
+            Analyze Market
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <div class="quick-picks">
+          <span>Try:</span>
+          <button onclick="quickSearch('skincare serums')">Skincare</button>
+          <button onclick="quickSearch('protein supplements')">Protein</button>
+          <button onclick="quickSearch('hair care india')">Hair Care</button>
+          <button onclick="quickSearch('yoga fitness gear')">Fitness</button>
+          <button onclick="quickSearch('healthy snacks')">Snacks</button>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat">
+          <strong>3+</strong>
+          <span>Live Sources</span>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <strong>6–8</strong>
+          <span>Concepts Generated</span>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <strong>100%</strong>
+          <span>Real Data</span>
+        </div>
+      </div>
+    </section>
+
+    <div id="loadingState" class="loading-state hidden">
+      <div class="loading-card">
+        <div class="loading-top">
+          <div class="pulse-ring"></div>
+          <div class="loading-title">Scanning live data...</div>
+        </div>
+        <div class="loading-steps">
+          <div class="lstep" id="step1">
+            <div class="lstep-icon">📦</div>
+            <div class="lstep-text">Scraping Amazon India reviews</div>
+            <div class="lstep-status"></div>
+          </div>
+          <div class="lstep" id="step2">
+            <div class="lstep-icon">💬</div>
+            <div class="lstep-text">Mining Reddit discussions</div>
+            <div class="lstep-status"></div>
+          </div>
+          <div class="lstep" id="step3">
+            <div class="lstep-icon">🛒</div>
+            <div class="lstep-text">Analyzing Flipkart data</div>
+            <div class="lstep-status"></div>
+          </div>
+          <div class="lstep" id="step4">
+            <div class="lstep-icon">🧠</div>
+            <div class="lstep-text">AI identifying market gaps</div>
+            <div class="lstep-status"></div>
+          </div>
+          <div class="lstep" id="step5">
+            <div class="lstep-icon">✨</div>
+            <div class="lstep-text">Generating product concepts</div>
+            <div class="lstep-status"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="resultsSection" class="hidden">
+      <div class="results-header">
+        <div>
+          <div class="results-label">Analysis Complete</div>
+          <h2 id="resultsTitle">Market Report</h2>
+        </div>
+        <div id="statsBar" class="stats-bar"></div>
+      </div>
+
+      <div id="insightsPanel" class="insights-panel"></div>
+      <div id="conceptsGrid" class="concepts-grid"></div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
